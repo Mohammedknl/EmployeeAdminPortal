@@ -1,0 +1,30 @@
+﻿@model List<EmployeeAdminPortal.UI.ClientModels.Employee>
+
+<h2>Employees</h2>
+<a class="btn btn-primary mb-2" href="/Employees/Create">Add New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Name</td>
+                <td>@emp.Email</td>
+                <td>@emp.Phone</td>
+                <td>@emp.Salary</td>
+                <td>
+                    <a href="/Employees/Edit/@emp.Id">Edit</a> |
+                    <a href="/Employees/Delete/@emp.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
